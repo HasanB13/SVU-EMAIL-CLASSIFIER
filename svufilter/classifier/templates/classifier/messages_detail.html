@@ -1,0 +1,17 @@
+{% extends "classifier/base.html" %}
+{% block content %}
+    <article class="media content-section">
+      <div class="media-body">
+        <div class="article-metadata">
+          <marquee>
+            <small class="mr-2">{{ object.sender }}</small>
+            <small class="mr-2">{{ object.reciever }}</small>
+            <small class="text-muted">{{ object.date_get|date:"d F, Y" }}</small>
+          </marquee>
+        </div>
+        <h2 class="article-title">{{ object.subject }}</h2>
+        <h3 class="article-title" >{{ object.typeEmail }}</h3>
+        <p class="article-content">{{ object.content }}</p>
+      </div>
+    </article>
+{% endblock content %}

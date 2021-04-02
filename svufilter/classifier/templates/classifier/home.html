@@ -1,0 +1,17 @@
+{% extends "classifier/base.html" %}
+{% block content %}
+
+<div class="inbox-body">
+    <table class="table table-inbox table-hover">
+        <tbody>
+            {% for email in emails %}
+                <a href="{% url 'email_detail' email.id %}" class="list-group-item">
+                    <span class="text-muted" style="min-width: 220px; display: inline-block;">{{email.subject}}</span>
+					<span class="text-muted" style="min-width:100px; display: inline-block;">{{email.sender}}</span>
+					<small class="badge">{{ email.date_get|date:"d F" }}</small>
+					</a>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}
