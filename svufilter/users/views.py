@@ -50,9 +50,7 @@ def loginUser(request):
         if form.is_valid():
             username = request.POST['username']
             password = request.POST['password']
-            print(username,password)
             user = authenticate(request,username=username, password=password)
-            print(user)
             if user:
                 host = 'mail.svuonline.org'
                 mail = imaplib.IMAP4_SSL(host,993)
